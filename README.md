@@ -1,4 +1,6 @@
 # HTR_CalamariOCR
+![](Images/Trascription_1.png) <br/>
+ <br/>
 Handwritten Text Recognition using Calamari OCR framework.
 ## Table of Contents  
 - [About the Project](#1)  
