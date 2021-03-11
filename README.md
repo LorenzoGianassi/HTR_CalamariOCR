@@ -49,14 +49,14 @@ To download the source code check the [Calamari OCR](https://github.com/Calamari
 To create Ground Truth required by Calamari OCR you need to download from [IAM Database](https://fki.tic.heia-fr.ch/databases/iam-handwriting-database) the datasets. Inside the datasets you will find the .png for each text lines of the document and the corresponding trascriptions in a xml file.  <br/>
 To create the Ground Truth download src/ code and run the method in ```Parser.py ```. <br/>
 After this run the the following lines from command line to compute the training, prediction and evaluate:
-```sh
+```
 calamari-train --files your_images.*.png
 ```
 Note, that calamari expects that each image file (.png) has a corresponding ground truth text file (.gt.txt) at the same location with the same base name. Required also by the evaluation step.
-```sh
+```
 calamari-predict --checkpoint path_to_model.ckpt --files your_images.*.png
 ```
-```sh
+```
 calamari-eval --gt *.gt.txt
 ```
 Calamari OCR also presents the possibility of early stopping during training, providing a validation set. Many other training options can be found on the repo [Calamari OCR](https://github.com/Calamari-OCR/calamari). <br/>
