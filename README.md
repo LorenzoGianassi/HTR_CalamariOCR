@@ -8,6 +8,7 @@ Handwritten Text Recognition using Calamari OCR framework.
 - [Getting Started](#3)
   - [Prerequsites](#4)
   - [Installation](#5)
+  - [Usage](#6)
 # About the Project <a name="1"/>
 The aim of this work is to replicate the training and testing  pipeline of a neural network about the problem of HTR. <br/>
 This process is intended to demonstrate the efficiency of the Calamari OCR framework used for the model training and testing phases.<br/>
@@ -44,6 +45,25 @@ python setup.py install
 Then download all dependecies.
 To download the source code check the [Calamari OCR](https://github.com/Calamari-OCR/calamari) repo. <br/>
 
+### Usage <a name="6"/>
+To create Ground Truth required by Calamari OCR you need to download from [IAM Database](https://fki.tic.heia-fr.ch/databases/iam-handwriting-database) the datasets. Inside the datasets you will find the .png for each text lines of the document and the corresponding trascriptions in a xml file.  <br/>
+To create the Ground Truth download src/ code and run the method in ```Parser.py ```. <br/>
+After this run the the following lines from command line to compute the training, prediction and evaluate:
+```sh
+calamari-train --files your_images.*.png
+```
+Note, that calamari expects that each image file (.png) has a corresponding ground truth text file (.gt.txt) at the same location with the same base name. Required also by the evaluation step.
+```sh
+calamari-predict --checkpoint path_to_model.ckpt --files your_images.*.png
+```
+```sh
+calamari-eval --gt *.gt.txt
+```
+Calamari OCR also presents the possibility of early stopping during training, providing a validation set. Many other training options can be found on the repo [Calamari OCR](https://github.com/Calamari-OCR/calamari). <br/>
+In the src/ directory you can find the following files:
+- ```Parser.py ``` : Creates the g Truth and manages the files within it
+- ```Utilities.py ``` : Utilities methods and creation of Confusion Matrix
+- ```Lines_Detector.py ``` : Image preprocessing and simple line segmentation
 # Authors
 - **Lorenzo Gianassi**
 - **Francesco Gigli**
