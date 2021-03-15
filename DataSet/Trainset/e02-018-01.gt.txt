@@ -1,0 +1,1 @@
+end reveals when the required amount
