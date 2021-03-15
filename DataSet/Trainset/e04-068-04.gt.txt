@@ -1,1 +1,0 @@
-I find that the type of rowlock we use in Canada

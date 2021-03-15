@@ -1,1 +1,0 @@
-voltage should be zero. The probe extends

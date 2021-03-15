@@ -1,1 +1,0 @@
-calamari-train --files *.png --validation C:\Users\gigli\Desktop\IaM\Validationset\*.png --batch_size 16 --num_threads 8

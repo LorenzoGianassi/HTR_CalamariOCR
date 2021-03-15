@@ -1,1 +1,0 @@
-yield, but this calculation is unnecessary

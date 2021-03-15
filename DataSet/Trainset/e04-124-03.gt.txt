@@ -1,1 +1,0 @@
-four blocks for the rowlocks and mark their positions

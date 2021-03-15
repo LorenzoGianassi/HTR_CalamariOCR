@@ -1,1 +1,0 @@
-enumeration is the household schedule.
