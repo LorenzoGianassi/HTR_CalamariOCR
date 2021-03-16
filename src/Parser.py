@@ -8,11 +8,11 @@ def parser_xml(path):
     # Creation of the Path that we are gonna use the .gt.txt files and the corrisponding image lines
     print("The current working directory is %s" % path)
 
-    path = path + r"\GroundTruth"
+    new_path = path + r"\GroundTruth"
     print(path)
 
     try:
-        os.mkdir(path)  # create the directory used to store the xml files
+        os.mkdir(new_path)  # create the directory used to store the xml files
     except OSError:
         print("Creation of the directory %s failed because already existed" % path)
     else:
@@ -20,12 +20,12 @@ def parser_xml(path):
 
     # Loop to open each files in the xml Directory to read each xml
     # To save the trascription inside each one into .txt file
-    directory = r'C:\Users\Lorenzo Gianassi\PycharmProjects\DDMproject\xml'
+    directory = path + r"\xml"
     for filename in os.listdir(directory):
         mytree = ET.parse(directory + '\\' + filename)
         myroot = mytree.getroot()
         i = 0  # counter of the trascription
-        save_path = path  # path to save the new .gt.txt files
+        save_path = new_path  # path to save the new .gt.txt files
         for child in myroot[1]:
             sentence = child.attrib['text']
             # reformat the name of the file to be the same of the png

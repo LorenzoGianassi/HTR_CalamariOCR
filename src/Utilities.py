@@ -3,6 +3,8 @@ import matplotlib
 import pandas as pd
 import seaborn as sn
 import matplotlib.pyplot as plt
+import os
+import glob
 
 
 # Help methods
@@ -79,3 +81,20 @@ def create_Matrix(GT_Matrix, Pred_Matrix):
     sn.heatmap(matrix, annot=True, cmap=cmap, fmt='g', linewidths=.5)
     plt.show()
 
+
+# method that counts the number of occurence of a letter inside the Ground-Truth
+def character_counter(path, letter):
+    path = path + r"\Testset"
+    print(path)
+    # filtering only '.gt.txt' files that we require
+    txt_files = glob.glob(path + "/*.gt.txt")
+    char_count = 0
+    for files in txt_files:
+        tmp_file = open(files)
+        text = tmp_file.read()
+        # count the number of times we find the letter in the sentece
+        count = text.count(letter)
+        char_count = char_count + count
+    # number of times the letter can be found in all sentences
+    print(char_count)
+    return char_count

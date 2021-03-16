@@ -22,3 +22,7 @@ GT_Matrix, Pred_Matrix = create_matrix_list(Ground_Truth, Prediction, Count)
 
 # create the matrix
 create_Matrix(GT_Matrix, Pred_Matrix)
+
+# count the number of occurencies of a character
+# pass the string variable of the character you want to count
+character_counter(path, 'o')
